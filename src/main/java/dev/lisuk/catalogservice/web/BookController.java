@@ -7,39 +7,41 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+
 @RestController
 @RequestMapping("books")
 public class BookController {
-    private final BookService service;
 
-    public BookController(BookService service) {
-        this.service = service;
+    private final BookService bookService;
+
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
     }
 
     @GetMapping
-    public Iterable<Book> viewBookList() {
-        return service.viewBookList();
+    public Iterable<Book> get() {
+        return bookService.viewBookList();
     }
 
     @GetMapping("{isbn}")
-    public Book viewBookDetails(@PathVariable String isbn) {
-        return service.viewBookDetails(isbn);
+    public Book getByIsbn(@PathVariable String isbn) {
+        return bookService.viewBookDetails(isbn);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Book addBookToCatalog(@Valid Book book) {
-        return service.addBookToCatalog(book);
+    public Book post(@Valid @RequestBody Book book) {
+        return bookService.addBookToCatalog(book);
     }
 
     @DeleteMapping("{isbn}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteBookFromCatalog(@PathVariable String isbn) {
-        service.removeBookFromCatalog(isbn);
+    public void delete(@PathVariable String isbn) {
+        bookService.removeBookFromCatalog(isbn);
     }
 
     @PutMapping("{isbn}")
-    public Book editBookDetails(@PathVariable String isbn, @Valid Book book) {
-        return service.editBookDetails(isbn, book);
+    public Book put(@PathVariable String isbn, @Valid @RequestBody Book book) {
+        return bookService.editBookDetails(isbn, book);
     }
 }
