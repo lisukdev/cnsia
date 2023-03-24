@@ -37,7 +37,7 @@ dependencyManagement {
 }
 
 bootRun {
-	systemProperty 'spring.profiles.active', 'testdata,dev'
+	systemProperty 'spring.profiles.active', 'testdata'
 }
 
 tasks.named('test') {
