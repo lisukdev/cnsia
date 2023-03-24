@@ -28,6 +28,7 @@ public class BookValidationTests {
                 "1234567890",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",
+                "RandomHouse",
                 9.90
         );
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
@@ -40,6 +41,7 @@ public class BookValidationTests {
                 "123456789",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",
+                "RandomHouse",
                 9.90
         );
         Set<ConstraintViolation<Book>> violations = validator.validate(book);

@@ -23,6 +23,7 @@ class CatalogServiceApplicationTests {
 				"1234567890",
 				"The Hitchhiker's Guide to the Galaxy",
 				"Douglas Adams",
+				"RandomHouse",
 				9.90
 		);
 

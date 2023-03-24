@@ -19,6 +19,7 @@ public class BookJsonTests {
                 "1234567890",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",
+                "RandomHouse",
                 9.90
         );
         var jsonContent = json.write(book);
@@ -42,6 +43,7 @@ public class BookJsonTests {
                 "1234567890",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",
+                null,
                 9.90
         ));
     }
