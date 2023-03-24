@@ -24,7 +24,7 @@ public class BookValidationTests {
 
     @Test
     void whenAllFieldsCorrectThenValidationSuceeds() {
-        var book = new Book(
+        var book = Book.of(
                 "1234567890",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",
@@ -36,7 +36,7 @@ public class BookValidationTests {
 
     @Test
     void whenIsbnDefinedButIncorrectThenValidtionFails(){
-        var book = new Book(
+        var book = Book.of(
                 "123456789",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",

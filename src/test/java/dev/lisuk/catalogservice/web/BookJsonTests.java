@@ -15,7 +15,7 @@ public class BookJsonTests {
 
     @Test
     void testSerialize() throws Exception {
-        var book = new Book(
+        var book = Book.of(
                 "1234567890",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",
@@ -38,7 +38,7 @@ public class BookJsonTests {
                 "price": 9.90
             }
             """;
-        assertThat(json.parse(content)).usingRecursiveComparison().isEqualTo(new Book(
+        assertThat(json.parse(content)).usingRecursiveComparison().isEqualTo(Book.of(
                 "1234567890",
                 "The Hitchhiker's Guide to the Galaxy",
                 "Douglas Adams",
