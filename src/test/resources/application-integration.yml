@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:15.2:///test
+    hikari:
+      connection-timeout: 2000
+      maximum-pool-size: 5
